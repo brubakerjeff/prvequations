@@ -64,8 +64,8 @@ myApp.controller('MyCtrl', ['$scope', function($scope) {
 
     $scope.CalculateP =  function() {
 
-        $scope.expressionp = "p_{cr}=\\dfrac{Et^3}{12R^3(1-\\nu^2)} = \\\\ \\text{               }" + 
-        String((($scope.Modulus*Math.pow(10,6)*Math.pow($scope.Thickness,3))/(12*Math.pow($scope.Radius,3)*(1-Math.pow($scope.Poisson,2)))).toFixed(2)) 
+        $scope.expressionp = "p_{cr}=\\dfrac{Et^3}{4R^3(1-\\nu^2)} = \\\\ \\text{               }" + 
+        String((($scope.Modulus*Math.pow(10,6)*Math.pow($scope.Thickness,3))/(4*Math.pow($scope.Radius,3)*(1-Math.pow($scope.Poisson,2)))).toFixed(2)) 
         + "\\text{ psi}";
         var $script = angular.element("<script type='math/tex'>")
                     .html($scope.expressionp);
