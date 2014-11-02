@@ -5,7 +5,7 @@
   
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured&dummy=.js"></script>
 
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.js">
   </script>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -23,14 +23,14 @@
 
   <body ng-controller="MyCtrl" >
     <ons-tabbar>
-      <ons-tabbar-item active="true" page="stress.html">
+      <ons-tabbar-item active="true" page="stress.html" ng-click="CalculateS()">
       <div class="tab" >
         <div class="tab-label" >Stress</div>
       </div>
     </ons-tabbar-item>
 
-    <ons-tabbar-item page="pressure.html">
-    <div class="tab" >
+    <ons-tabbar-item page="pressure.html"  ng-click="CalculateP()">
+    <div class="tab">
       <div class="tab-label" >Pressure</div>
     </div>
     </ons-tabbar-item>
@@ -39,23 +39,23 @@
 
   <ons-template id="stress.html">
   <ons-page>
-
+<div ng-controller="MyCtrl" >
      <ons-toolbar>
         <div class="center">Buckling Stress</div>
       </ons-toolbar>
 
  <span style="float:left;width:110px">Thickness (t):</span>
-  <span style="float:left"><input type="number" ng-model="Thickness" style="float:left;width:50px"></input>
+  <span style="float:left"><input type="number" ng-change="CalculateS()" step=0.05 ng-model="Thickness" style="float:left;width:50px"></input>
     <span style="float:left">in</span>
   </span>
   <span style="clear:both;float:left;width:110px">Modulus (E):</span>
-  <span style="float:left"><input type="number" ng-model="Modulus" style="float:left;width:50px"></input><span style="float:left">10<sup>6</sup> psi</span>
+  <span style="float:left"><input type="number" ng-change="CalculateS()" ng-model="Modulus" style="float:left;width:50px"></input><span style="float:left">10<sup>6</sup> psi</span>
   </span>
   <span style="clear:both;float:left;width:110px">Poisson (&nu;):</span>
-  <span style="float:left"><input type="number" ng-model="Poisson" style="float:right;width:50px"></input>
+  <span style="float:left"><input type="number" ng-change="CalculateS()" step=0.02 ng-model="Poisson" style="float:right;width:50px"></input>
   </span>
   <span   style="clear:both;float:left;width:110px">Length (L):</span>
-  <span style="float:left"><input type="number" ng-model="Length" style="float:left;width:50px"></input>
+  <span style="float:left"><input type="number" ng-change="CalculateS()" ng-model="Length" style="float:left;width:50px"></input>
     <span  style="float:left">in</span>
   </span> 
 
@@ -64,9 +64,9 @@
 
   <ul  style="clear:both;float:left;"><li>Uniform Axial Compression</li></ul>
 
-  <br> <span  style="clear:both;float:left;width:90px;position:relative;top:25px;" mathjax-binds="expressions"></span>
+  <br> <span  style="clear:both;float:left;width:90px;position:relative;top:25px;" id="expressions"></span>
 
-
+</div>
   </ons-page>
   </ons-template>
 
@@ -77,29 +77,29 @@
         <ons-toolbar>
         <div class="center">Buckling Pressure</div>
       </ons-toolbar>
-
+<div ng-controller="MyCtrl" >
  <span style="float:left;width:110px">Thickness (t):</span>
-  <span style="float:left"><input type="number" ng-model="Thickness" style="float:left;width:50px"></input>
+  <span style="float:left"><input type="number" ng-change="CalculateP()" step=0.05  ng-model="Thickness" style="float:left;width:50px"></input>
     <span style="float:left">in</span>
   </span>
   <span style="clear:both;float:left;width:110px">Modulus (E):</span>
-  <span style="float:left"><input type="number" ng-model="Modulus" style="float:left;width:50px"></input><span style="float:left">10<sup>6</sup> psi</span>
+  <span style="float:left"><input type="number" ng-change="CalculateP()" ng-model="Modulus" style="float:left;width:50px"></input><span style="float:left">10<sup>6</sup> psi</span>
   </span>
   <span style="clear:both;float:left;width:110px">Poisson (&nu;):</span>
-  <span style="float:left"><input type="number" ng-model="Poisson" style="float:right;width:50px"></input>
+  <span style="float:left"><input type="number" ng-change="CalculateP()" step=0.02 ng-model="Poisson" style="float:right;width:50px"></input>
   </span>
 
 
   <span   style="clear:both;float:left;width:110px">Radius (R):</span>
-  <span style="float:left"><input type="number" ng-model="Radius" style="float:left;width:50px"></input>
+  <span style="float:left"><input type="number" ng-change="CalculateP()" ng-model="Radius" style="float:left;width:50px"></input>
     <span  style="float:left">in</span>
   </span>
  
 
   <ul  style="clear:both;float:left;"><li>Uniform External Pressure</li></ul>
 
-   <br> <span  style="clear:both;float:left;width:110px;position:relative;top:25px;" mathjax-bindp="expressionp"></span>
-
+   <br> <span  style="clear:both;float:left;width:110px;position:relative;top:25px;" id="expressionp"></span>
+</div>
   </ons-page>
   </ons-template>
 
