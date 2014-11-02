@@ -1,0 +1,109 @@
+  <!doctype html>
+  <html lang="en" ng-app="myApp">
+  <head>
+     <meta charset="utf-8">
+  
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured&dummy=.js"></script>
+
+
+  </script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">  
+  <link rel="stylesheet" href="styles/app.css"/>
+
+
+  <script src="lib/onsen/js/angular/angular.js"></script>   
+    <script src="lib/onsen/js/onsenui.js"></script>    
+
+    <script type="text/javascript" src="js/app.js"></script>
+  </head>
+
+  <body ng-controller="MyCtrl" >
+    <ons-tabbar>
+      <ons-tabbar-item active="true" page="stress.html">
+      <div class="tab" >
+        <div class="tab-label" >Stress</div>
+      </div>
+    </ons-tabbar-item>
+
+    <ons-tabbar-item page="pressure.html">
+    <div class="tab" >
+      <div class="tab-label" >Pressure</div>
+    </div>
+    </ons-tabbar-item>
+    </ons-tabbar>
+
+
+  <ons-template id="stress.html">
+  <ons-page>
+
+     <ons-toolbar>
+        <div class="center">Buckling Stress</div>
+      </ons-toolbar>
+
+ <span style="float:left;width:110px">Thickness (t):</span>
+  <span style="float:left"><input type="number" ng-model="Thickness" style="float:left;width:50px"></input>
+    <span style="float:left">in</span>
+  </span>
+  <span style="clear:both;float:left;width:110px">Modulus (E):</span>
+  <span style="float:left"><input type="number" ng-model="Modulus" style="float:left;width:50px"></input><span style="float:left">10<sup>6</sup> psi</span>
+  </span>
+  <span style="clear:both;float:left;width:110px">Poisson (&nu;):</span>
+  <span style="float:left"><input type="number" ng-model="Poisson" style="float:right;width:50px"></input>
+  </span>
+  <span   style="clear:both;float:left;width:110px">Length (L):</span>
+  <span style="float:left"><input type="number" ng-model="Length" style="float:left;width:50px"></input>
+    <span  style="float:left">in</span>
+  </span> 
+
+  </span>
+
+
+  <ul  style="clear:both;float:left;"><li>Uniform Axial Compression</li></ul>
+
+  <br> <span  style="clear:both;float:left;width:90px;position:relative;top:25px;" mathjax-binds="expressions"></span>
+
+
+  </ons-page>
+  </ons-template>
+
+
+  <ons-template id="pressure.html">
+  <ons-page>
+
+        <ons-toolbar>
+        <div class="center">Buckling Pressure</div>
+      </ons-toolbar>
+
+ <span style="float:left;width:110px">Thickness (t):</span>
+  <span style="float:left"><input type="number" ng-model="Thickness" style="float:left;width:50px"></input>
+    <span style="float:left">in</span>
+  </span>
+  <span style="clear:both;float:left;width:110px">Modulus (E):</span>
+  <span style="float:left"><input type="number" ng-model="Modulus" style="float:left;width:50px"></input><span style="float:left">10<sup>6</sup> psi</span>
+  </span>
+  <span style="clear:both;float:left;width:110px">Poisson (&nu;):</span>
+  <span style="float:left"><input type="number" ng-model="Poisson" style="float:right;width:50px"></input>
+  </span>
+
+
+  <span   style="clear:both;float:left;width:110px">Radius (R):</span>
+  <span style="float:left"><input type="number" ng-model="Radius" style="float:left;width:50px"></input>
+    <span  style="float:left">in</span>
+  </span>
+ 
+
+  <ul  style="clear:both;float:left;"><li>Uniform External Pressure</li></ul>
+
+   <br> <span  style="clear:both;float:left;width:110px;position:relative;top:25px;" mathjax-bindp="expressionp"></span>
+
+  </ons-page>
+  </ons-template>
+
+
+
+  </body>
+  </HTML>

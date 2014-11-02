@@ -1,0 +1,25 @@
+ <span style="float:left;width:90px">Thickness (t):</span>
+  <span style="float:left"><input type="number" ng-model="Thickness" style="float:left;width:50px"></input>
+  	<span style="float:left">in</span>
+  </span>
+  <span style="clear:both;float:left;width:90px">Modulus (E):</span>
+  <span style="float:left"><input type="number" ng-model="Modulus" style="float:left;width:50px"></input><span style="float:left">10<sup>6</sup> psi</span>
+  </span>
+  <span style="clear:both;float:left;width:90px">Poisson (&nu;):</span>
+  <span style="float:left"><input type="number" ng-model="Poisson" style="float:right;width:50px"></input>
+  </span>
+  <span   style="clear:both;float:left;width:90px">Length (L):</span>
+  <span style="float:left"><input type="number" ng-model="Length" style="float:left;width:50px"></input>
+    <span  style="float:left">in</span>
+  </span> 
+
+  <span   style="clear:both;float:left;width:90px">Radius (R):</span>
+  <span style="float:left"><input type="number" ng-model="Radius" style="float:left;width:50px"></input>
+    <span  style="float:left">in</span>
+  </span>
+  <br> <span  style="clear:both;float:left;width:90px;position:relative;top:25px;" mathjax-bind="expression"></span>
+
+
+  <ul ><li>Uniform Axial Compression</li></ul>
+  <div > Critical Buckling Pressure:</div>
+  <ul ><li>Uniform External Pressure</li></ul>
