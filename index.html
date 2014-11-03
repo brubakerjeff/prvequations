@@ -25,13 +25,13 @@
     <ons-tabbar>
       <ons-tabbar-item active="true" page="stress.html" ng-click="CalculateS()">
       <div class="tab" >
-        <div class="tab-label" >Stress</div>
+        <div class="tab-label" >Uniform Axial Compression</div>
       </div>
     </ons-tabbar-item>
 
     <ons-tabbar-item page="pressure.html"  ng-click="CalculateP()">
     <div class="tab">
-      <div class="tab-label" >Pressure</div>
+      <div class="tab-label" >Uniform External Pressure</div>
     </div>
     </ons-tabbar-item>
     </ons-tabbar>
@@ -41,7 +41,7 @@
   <ons-page>
 <div ng-controller="MyCtrl" >
      <ons-toolbar>
-        <div class="center">Buckling Stress</div>
+        <div class="center">Theoretical Minimum Buckling Loads</div>
       </ons-toolbar>
 
  <span style="float:left;width:110px">Thickness (t):</span>
@@ -54,15 +54,15 @@
   <span style="clear:both;float:left;width:110px">Poisson (&nu;):</span>
   <span style="float:left"><input type="number" ng-change="CalculateS()" step=0.02 ng-model="Poisson" style="float:right;width:50px"></input>
   </span>
-  <span   style="clear:both;float:left;width:110px">Length (L):</span>
-  <span style="float:left"><input type="number" ng-change="CalculateS()" ng-model="Length" style="float:left;width:50px"></input>
+<span   style="clear:both;float:left;width:110px">Radius (R):</span>
+  <span style="float:left"><input type="number" ng-change="CalculateS()" ng-model="Radius" style="float:left;width:50px"></input>
     <span  style="float:left">in</span>
   </span> 
 
   </span>
 
 
-  <ul  style="clear:both;float:left;"><li>Uniform Axial Compression</li></ul>
+  <ul  style="clear:both;float:left;"><li>Critical Axial Stress per <a href="http://www.amazon.com/Theory-Elastic-Stability-Mechanical-Engineering/dp/0486472078/ref=sr_1_1?ie=UTF8&qid=1414974507&sr=8-1&keywords=elastic+stability">Timoshenko</a></li></ul>
 
   <br> <span  style="clear:both;float:left;width:90px;position:relative;top:25px;" id="expressions"></span>
 
@@ -96,7 +96,7 @@
   </span>
  
 
-  <ul  style="clear:both;float:left;"><li>Uniform External Pressure</li></ul>
+  <ul  style="clear:both;float:left;"><li>Critical Buckling Pressure per <a href="http://www.amazon.com/Theory-Elastic-Stability-Mechanical-Engineering/dp/0486472078/ref=sr_1_1?ie=UTF8&qid=1414974507&sr=8-1&keywords=elastic+stability">Timoshenko</a></li></ul>
 
    <br> <span  style="clear:both;float:left;width:110px;position:relative;top:25px;" id="expressionp"></span>
 </div>
